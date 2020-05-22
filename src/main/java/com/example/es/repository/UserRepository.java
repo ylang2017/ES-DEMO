@@ -14,8 +14,12 @@ import org.springframework.stereotype.Repository;
  * ElasticsearchRepository已经内置了一些列的CRUD方法，此出只写几个具有代表性的持久化操作。
  *//*
 
+<<<<<<< HEAD
 
 //@Repository
+=======
+@Repository
+>>>>>>> 30270083436a9d909ab159b2324f16a352c83d45
 public interface UserRepository extends ElasticsearchRepository<User, String> {
     */
 /**
@@ -29,11 +33,18 @@ public interface UserRepository extends ElasticsearchRepository<User, String> {
      * @return
      *//*
 
+<<<<<<< HEAD
 
     //@Query("{\"bool\" : {\"must\" : {\"field\" : {\"userName\" : \"?\"}}}}")
     Page<User> findByUserNameSelf(String userName, Pageable pageable);
 
     //@Query("{\"bool\" : {\"must\" : {\"range\"   {\"age\" :{\"from\":\"?\",\"to\":\"?\",\"include_lower\":true,\"include_upper\":true}}}}}")
+=======
+    @Query("{\"bool\" : {\"must\" : {\"field\" : {\"userName\" : \"?\"}}}}")
+    Page<User> findByUserNameSelf(String userName, Pageable pageable);
+
+    @Query("{\"bool\" : {\"must\" : {\"range\"   {\"age\" :{\"from\":\"?\",\"to\":\"?\",\"include_lower\":true,\"include_upper\":true}}}}}")
+>>>>>>> 30270083436a9d909ab159b2324f16a352c83d45
     Page<User> findByAgeBetweenSelf(Integer ageStart,Integer ageEnd);
 
     */
@@ -43,7 +54,10 @@ public interface UserRepository extends ElasticsearchRepository<User, String> {
      * @return
      *//*
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 30270083436a9d909ab159b2324f16a352c83d45
     Page<User> findByDescribeMessageContaining(String describeMessage);
     Page<User> findByDescribeMessageBackContaining(String describeMessageBack);
 }

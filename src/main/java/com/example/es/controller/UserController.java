@@ -1,6 +1,9 @@
 package com.example.es.controller;
 
+<<<<<<< HEAD
 import com.example.es.entity.User;
+=======
+>>>>>>> 30270083436a9d909ab159b2324f16a352c83d45
 import com.example.es.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.IOException;
+<<<<<<< HEAD
 import java.util.Date;
 import java.util.UUID;
+=======
+>>>>>>> 30270083436a9d909ab159b2324f16a352c83d45
 
 @Controller
 public class UserController {
@@ -26,6 +32,7 @@ public class UserController {
     @ResponseBody
     @RequestMapping("/addIndex")
     public String addUserIndex() throws IOException {
+<<<<<<< HEAD
         userService.addUserIndex();
         return "ok";
     }
@@ -52,4 +59,9 @@ public class UserController {
 
         return userService.getUser("678YOnIBjdswrGGdxQuN");
     }
+=======
+        userService.addIndex();
+        return "ok";
+    }
+>>>>>>> 30270083436a9d909ab159b2324f16a352c83d45
 }

@@ -16,6 +16,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 //@Accessors(chain = true)
+<<<<<<< HEAD
 //@Document(indexName = "user_index",type = "_doc", shards = 1, replicas = 0)// shards分区数，由于单机测试就只写1，replicas每个分区的备份数。
 public class User {
     //@Id
@@ -37,6 +38,29 @@ public class User {
     private Date birthDay;
 
     //@Field(type = FieldType.Boolean)
+=======
+@Document(indexName = "user_index",type = "_doc", shards = 1, replicas = 0)// shards分区数，由于单机测试就只写1，replicas每个分区的备份数。
+public class User {
+    @Id
+    private String id;
+
+    @Field(type = FieldType.Keyword)
+    private String userName;
+
+    @Field(type = FieldType.Integer)
+    private Integer age;
+
+    @Field(type = FieldType.Text, analyzer = "ik_max_word")// 这里使用ik分词器，对此字段进行最大程度分词，尽可能多的匹配分词。与之相对的还有ik_smart，粗粒度分词。
+    private String describeMessage;
+
+    @Field(type = FieldType.Text)// 这里设置一个和describeMessage相同的属性，但是不使用分词器，用以比较二者对关键词命中的差别。
+    private String describeMessageBack;
+
+    @Field(type = FieldType.Date)
+    private Date birthDay;
+
+    @Field(type = FieldType.Boolean)
+>>>>>>> 30270083436a9d909ab159b2324f16a352c83d45
     private Boolean married;
 
     public User(String id, String userName, Integer age, String describeMessage, String describeMessageBack, Date birthDay, Boolean married) {
