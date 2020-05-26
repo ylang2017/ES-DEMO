@@ -1,7 +1,7 @@
 package com.example.es.service;
 
 import com.example.es.entity.User;
-//import com.example.es.repository.UserRepository;
+import com.example.es.repository.UserRepository;
 import com.example.es.repository.UserRepositoryClientType;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.bulk.BulkRequest;

@@ -1,0 +1,54 @@
+{
+  "properties" : {
+    "author" : {
+      "type" : "text",
+      "fields" : {
+        "keyword" : {
+          "type" : "keyword",
+          "ignore_above" : 256
+        }
+      }
+    },
+    "available" : {
+      "type" : "boolean"
+    },
+    "bookName" : {
+      "type" : "text",
+      "fields" : {
+        "keyword" : {
+          "type" : "keyword",
+          "ignore_above" : 256
+        }
+      }
+    },
+    "cost" : {
+      "type" : "float"
+    },
+    "describeMessage" : {
+      "type" : "text",
+      "analyzer": "ik_max_word",
+      "search_analyzer": "ik_max_word",
+      "fields" : {
+        "keyword" : {
+          "type" : "keyword",
+          "ignore_above" : 256
+        }
+      }
+    },
+    "describeMessageBack" : {
+      "type" : "text",
+      "fields" : {
+        "keyword" : {
+          "type" : "keyword",
+          "ignore_above" : 256
+        }
+      }
+    },
+    "id" : {
+      "type" : "keyword"
+    },
+    "publishDate" : {
+      "type" : "date"
+    }
+  }
+}
