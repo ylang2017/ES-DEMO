@@ -1,10 +1,29 @@
 package com.example.es.util;
 
+import sun.misc.BASE64Encoder;
+
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.List;
+import java.util.Base64;
 
 public class FileUtil {
+    public static void writeFile(String filePath,String content) {
+        try {
+            File file = new File(filePath);
+            if(!file.exists()){
+                file.createNewFile();
+            }
+
+            try(FileWriter fw = new FileWriter(file)){
+                fw.write(content);
+            }
+        }catch (IOException e){
+            System.out.println(" io error !!!");
+        }
+    }
+
     public static String readTxtFile(File file) {
         StringBuilder result = new StringBuilder();
         try (BufferedReader br = new BufferedReader(new FileReader(file));) {
@@ -46,4 +65,16 @@ public class FileUtil {
             }
         }
     }
+
+    /**
+     * 读取指定路径文件，返回base64
+     * @param filePath
+     * @return
+     * @throws Exception
+     */
+    public static String readFileToBase64(String filePath) throws Exception{
+        byte[] b = Files.readAllBytes(Paths.get(filePath));
+        return Base64.getEncoder().encodeToString(b);
+    }
+
 }
