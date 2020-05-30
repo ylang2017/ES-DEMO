@@ -12,8 +12,21 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ArticleTest {
+    @Test
+    public void strTest(){
+        String str = "推荐人： 来源：文章阅读网 时间：2020-05-10 18:48 阅读： ";
+        String pattern = "\\d{4}-\\d{1,2}-\\d{1,2} \\d{1,2}:\\d{2}";
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(str);
+        if(m.find()){
+            System.out.println(m.group());
+        }
+    }
+
     @Test
     public void testBulkAdd(){
         // 模拟从数据库中获取关于文章的其它信息
